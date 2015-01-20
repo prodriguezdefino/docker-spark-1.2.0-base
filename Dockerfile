@@ -22,6 +22,8 @@ RUN cd /usr/local && ln -s spark-1.2.0-bin-hadoop2.4 spark
 ENV SPARK_HOME /usr/local/spark
 RUN mkdir $SPARK_HOME/yarn-remote-client
 ADD yarn-remote-client $SPARK_HOME/yarn-remote-client
+RUN mkdir /tmp/spark-files
+ADD spark-files /tmp/spark-files
 
 # create default configuration pointing to local host
 RUN sed s/HOSTNAME/localhost/ $SPARK_HOME/yarn-remote-client/core-site.xml.template > $SPARK_HOME/yarn-remote-client/core-site.xml
