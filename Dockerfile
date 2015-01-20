@@ -4,7 +4,7 @@ MAINTAINER prodriguezdefino prodriguezdefino@gmail.com
 # install scala 
 ENV SCALA_VERSION 2.11.5
 ENV SBT_VERSION 0.13.7
-ENV SCALA_HOME /opt/scala-$SCALA_VERSION
+ENV SCALA_HOME /usr/share/scala
 ENV PATH $SCALA_HOME/bin:$PATH
 
 RUN wget http://www.scala-lang.org/files/archive/scala-$SCALA_VERSION.deb 
