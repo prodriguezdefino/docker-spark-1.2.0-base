@@ -1,3 +1,5 @@
+## Apache Spark Base image
+#
 FROM prodriguezdefino/hadoop-2.6.0-base
 MAINTAINER prodriguezdefino prodriguezdefino@gmail.com
 
@@ -15,6 +17,9 @@ RUN apt-get update && apt-get install -y scala
 RUN wget http://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb
 RUN dpkg -i sbt-$SBT_VERSION.deb 
 RUN apt-get update && apt-get install -y sbt
+
+# clean up deb files
+RUN rm -f /*.deb
 
 # download spark 1.2.0
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-1.2.0-bin-hadoop2.4.tgz | tar -xz -C /usr/local/
