@@ -11,12 +11,10 @@ ENV PATH $SCALA_HOME/bin:$PATH
 
 RUN wget http://www.scala-lang.org/files/archive/scala-$SCALA_VERSION.deb 
 RUN dpkg -i scala-$SCALA_VERSION.deb
-RUN apt-get update && apt-get install -y scala
  
 # sbt installation
 RUN wget http://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb
 RUN dpkg -i sbt-$SBT_VERSION.deb 
-RUN apt-get update && apt-get install -y sbt
 
 # clean up deb files
 RUN rm -f /*.deb
