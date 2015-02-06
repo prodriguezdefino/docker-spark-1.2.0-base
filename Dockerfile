@@ -1,6 +1,6 @@
 ## Apache Spark Base image
 #
-FROM prodriguezdefino/hadoopbase:2.6.0
+FROM prodriguezdefino/hadoopbase
 MAINTAINER prodriguezdefino prodriguezdefino@gmail.com
 
 # install scala 
