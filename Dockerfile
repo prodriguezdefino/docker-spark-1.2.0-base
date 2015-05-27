@@ -35,7 +35,7 @@ RUN sed s/HOSTNAME/localhost/ $SPARK_HOME/yarn-remote-client/yarn-site.xml.templ
 RUN $BOOTSTRAP && hdfs dfsadmin -safemode leave && hdfs dfs -put $SPARK_HOME-1.3.1-bin-hadoop2.6/lib /spark
 
 ENV YARN_CONF_DIR $HADOOP_PREFIX/etc/hadoop
-ENV SPARK_JAR hdfs:///spark/spark-assembly-1.3.1-hadoop2.4.0.jar
+ENV SPARK_JAR hdfs:///spark/spark-assembly-1.3.1-hadoop2.6.0.jar
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 
 CMD ["/etc/bootstrap.sh", "-d"]
